@@ -6,9 +6,9 @@
       }
 
 body{
-    
+    min-height: 100vh;
 }
 #ftr{
-
-
+    position: sticky;
+    top: 100%;
 }
