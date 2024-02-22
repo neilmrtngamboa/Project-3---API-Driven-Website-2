@@ -103,7 +103,7 @@ document.querySelector('#find').addEventListener('click', () => {
 
                 document.querySelector('#search').value = "";
                 document.querySelector('#newSearch').style.display = "block";
-                document.querySelector('.bn54').disabled = true;
+                document.querySelector('#find').disabled = true;
                 document.querySelector('#newSearch').addEventListener('click', () => {
                     location.reload();
                 });
