@@ -1,17 +1,18 @@
     
-    
+//Function when the user clicks the 'Search' Button    
 document.querySelector('#find').addEventListener('click', () => {
+    //Sound plays after clicking the button
     document.querySelector('#snd').play();
+    //Converting the pokemon name to the searched value
     const pokemonName = document.querySelector('#search').value.toLowerCase();  
-        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-        .then((response) =>  response.json())
-        .then((result) => {console.log(result)
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`) //getting data from endpoint
+        .then((response) =>  response.json()) //converting data into JSON
+        .then((result) => {
 
-            
-
+            //IF-ELSE Condition if the text area is empty
             if(document.querySelector('#search').value == ""){
-                alert("Field is empty!");
-            }else{
+                alert("Field is empty!"); //alerting when the text area is empty 
+            }else{ //Showing the content if the API has the search value
                 document.querySelector('#pokemonContent').innerHTML +=
 
                 ` <div class="card d-flex mx-auto bg-light" style=" width: 15rem;">
@@ -31,7 +32,7 @@ document.querySelector('#find').addEventListener('click', () => {
                 </div>
                 </div>`
 
-
+                //Another condition for the fetched API, to change the background color based on the Pokemon Type
                 if(result.types[0].type.name.toLowerCase() == 'water'){
                     document.querySelector('#pokemonContent').style.background = "rgb(0, 255, 255)";
                     document.querySelector('#pokemonContent').style.backgroundImage = "url(/images/bg-pokeballs.png)";
@@ -101,10 +102,11 @@ document.querySelector('#find').addEventListener('click', () => {
                     document.querySelector('#pokemonContent').style.backgroundImage = "url(/images/bg-pokeballs.png)";
                 }
 
-                document.querySelector('#search').value = "";
-                document.querySelector('#newSearch').style.display = "block";
-                document.querySelector('#find').disabled = true;
-                document.querySelector('#newSearch').addEventListener('click', () => {
+                
+                document.querySelector('#search').value = ""; //Clearing the text area after finding a pokemon
+                document.querySelector('#newSearch').style.display = "block"; //Showing a button after searching a new pokemon
+                document.querySelector('#find').disabled = true; //Disabling the search button after searching for a pokemon
+                document.querySelector('#newSearch').addEventListener('click', () => { //the button to search for another pokemon, also refreshing the page
                     location.reload();
                 });
               
