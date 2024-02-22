@@ -13,20 +13,25 @@
 </head>
 <body class="bg-warning">
     
-    
-    <section class="d-flex align-items-center justify-content-center">
+
+    <section class="container-fluid d-flex align-items-center justify-content-center">
         <div><img class="img-fluid d-flex" style="height: 12rem; width: 17rem;" src="/images/pokemon-logo.png" alt=""></div>
         <div><h1 class="text-center mb-5 fw-bold mt-5 ms-2 header" id="">FINDER</h1></div>
     </section>           
     
-
-    <div class="d-flex justify-content-center header">
-        <input type="text" class="form" placeholder="Search for a Pokémon..." id="search">
-        <button class="btn ms-3 btn-primary" id="find">Search</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                    <input type="text" class="form" placeholder="Search for a Pokémon..." id="search">
+                    <button class="btn ms-3 btn-primary" id="find">Search</button>
+            </div>
+        </div>
+        
     </div>
+  
 
     <div class="container-fluid mt-3">
-        <div class="row"> 
+        <div class="row d-flex justify-content-center"> 
             <div class="col-md-12">
                 <div class="card bg-light shadow" id="cardContent">
                     <div class="card-body border-none" id="pokemonContent">
