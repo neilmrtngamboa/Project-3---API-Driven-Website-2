@@ -101,6 +101,7 @@ document.querySelector('#find').addEventListener('click', () => {
                     document.querySelector('#pokemonContent').style.backgroundImage = "url(/images/bg-pokeballs.png)";
                 }
 
+                document.querySelector('#search').value = "";
                 document.querySelector('#newSearch').style.display = "block";
                 document.querySelector('#find').disabled = true;
                 document.querySelector('#newSearch').addEventListener('click', () => {
