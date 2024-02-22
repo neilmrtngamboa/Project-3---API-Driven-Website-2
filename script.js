@@ -1,7 +1,7 @@
     
     
 document.querySelector('#find').addEventListener('click', () => {
-
+    document.querySelector('#snd').play();
     const pokemonName = document.querySelector('#search').value.toLowerCase();  
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
         .then((response) =>  response.json())
@@ -103,7 +103,7 @@ document.querySelector('#find').addEventListener('click', () => {
 
                 document.querySelector('#search').value = "";
                 document.querySelector('#newSearch').style.display = "block";
-                document.querySelector('#find').disabled = true;
+                document.querySelector('.bn54').disabled = true;
                 document.querySelector('#newSearch').addEventListener('click', () => {
                     location.reload();
                 });
